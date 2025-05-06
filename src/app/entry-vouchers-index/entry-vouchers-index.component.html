@@ -1,0 +1,66 @@
+<div class="instagram-theme">
+    <div class="header">
+      <h2><i class="fas fa-ticket-alt"></i> Entry Vouchers</h2>
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Rechercher un voucher...">
+      </div>
+    </div>
+  
+   
+  
+    <!-- Grille de vouchers -->
+    <div class="voucher-grid">
+      <div *ngFor="let voucher of vouchers" 
+           class="voucher-card" 
+           [ngClass]="getStatusClass(voucher.status)"
+           (click)="selectVoucher(voucher)">
+        <div class="card-header">
+          <div class="voucher-code">{{voucher.voucherCode}}</div>
+          <div class="status-badge">{{voucher.status}}</div>
+        </div>
+  
+        <div class="card-content">
+          <p class="announce">{{voucher.announce}}</p>
+          
+          <div class="dates">
+            <div class="date-item">
+              <i class="far fa-calendar-alt"></i>
+              <span>{{voucher.issueDate | date:'shortDate'}}</span>
+            </div>
+            <div class="date-item">
+              <i class="far fa-calendar-times"></i>
+              <span>{{voucher.expiryDate | date:'shortDate'}}</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="card-actions">
+          <button class="action-btn like-btn">
+            <i class="far fa-heart"></i>
+          </button>
+          <button class="action-btn delete-btn" (click)="deleteVoucher(voucher.id!); $event.stopPropagation()">
+            <i class="far fa-trash-alt"></i>
+          </button>
+          <button (click)="selectVoucher(voucher)">Edit</button>
+
+        </div>
+      </div>
+    </div>
+  
+    <!-- Détails du voucher sélectionné -->
+    <div class="voucher-details-card" *ngIf="selectedVoucher">
+      <h3><i class="fas fa-info-circle"></i> Détails du Voucher</h3>
+  
+      <p><strong>Code :</strong> {{selectedVoucher.voucherCode}}</p>
+      <p><strong>Description :</strong> {{selectedVoucher.announce}}</p>
+      <p><strong>Émission :</strong> {{selectedVoucher.issueDate | date:'fullDate'}}</p>
+      <p><strong>Expiration :</strong> {{selectedVoucher.expiryDate | date:'fullDate'}}</p>
+      <p><strong>Statut :</strong> {{selectedVoucher.status}}</p>
+  
+      <button (click)="selectedVoucher = null" class="close-detail-btn">
+        <i class="fas fa-times-circle"></i> Fermer
+      </button>
+    </div>
+  </div>
+  

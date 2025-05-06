@@ -1,0 +1,302 @@
+/* Style de base */
+.container {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+  
+  .container h2 {
+    color: #2d3748;
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  
+  .container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg,  #cb5811, #6a11cb);
+    border-radius: 2px;
+  }
+  
+  /* Style du tableau */
+  .container table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+  }
+  
+  .container thead tr {
+    background-color: #f8fafc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  }
+  
+  .container th {
+    padding: 16px 20px;
+    text-align: left;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  
+  .container tbody tr {
+    transition: all 0.25s ease;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .container tbody tr:hover {
+    background-color: #f8fafc;
+    transform: translateX(4px);
+  }
+  
+  .container td {
+    padding: 16px 20px;
+    color: #cb5811, #6a11cb;
+    font-size: 0.95rem;
+    vertical-align: middle;
+  }
+  
+  /* Style spécifique des colonnes */
+  .container td:nth-child(1) { /* Produit */
+    font-weight: 500;
+    color: #1e293b;
+  }
+  
+  .container td:nth-child(2) { /* Catégorie */
+    position: relative;
+    padding-left: 24px;
+  }
+  
+  .container td:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: #3b82f6;
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+  
+  .container td:nth-child(3) { /* Quantité */
+    font-weight: 600;
+    color: #10b981;
+  }
+  
+  .container td:nth-child(4) { /* Confiance */
+    position: relative;
+    font-weight: 500;
+  }
+  
+  .container td:nth-child(4)::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    bottom: 14px;
+    width: calc(100% - 40px);
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+  }
+  
+  .container td:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    bottom: 14px;
+    width: calc((var(--confidence) * (100% - 40px)));
+    height: 4px;
+    background: linear-gradient(90deg, #cb5811, #6a11cb);
+    border-radius: 2px;
+    z-index: 1;
+  }
+  
+  .container td:nth-child(5) { /* Emplacement */
+    color: #cb5811;
+    font-weight: 500;
+  }
+  
+  .container td:nth-child(6) { /* Date */
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+  
+  /* Animation des lignes */
+  @keyframes fadeInRow {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .container tbody tr {
+    animation: fadeInRow 0.4s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .container tbody tr:nth-child(1) { animation-delay: 0.1s; }
+  .container tbody tr:nth-child(2) { animation-delay: 0.2s; }
+  .container tbody tr:nth-child(3) { animation-delay: 0.3s; }
+  .container tbody tr:nth-child(4) { animation-delay: 0.4s; }
+  .container tbody tr:nth-child(5) { animation-delay: 0.5s; }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      padding: 16px;
+      margin: 16px;
+      border-radius: 8px;
+    }
+    
+    .container table {
+      display: block;
+      overflow-x: auto;
+    }
+    
+    .container th,
+    .container td {
+      padding: 12px 16px;
+    }
+  }
+
+
+  /* Style des boutons */
+.container button {
+    background: linear-gradient(135deg, #cb5811, #6a11cb);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+  }
+  
+  .container button:hover {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .container button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style spécifique pour la colonne bouton */
+  .container td:last-child {
+    text-align: center;
+    padding: 12px 20px;
+  }
+  
+  /* Animation supplémentaire pour le bouton */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .container button.updating {
+    animation: pulse 1.5s infinite;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+  }
+  
+  /* Icône optionnelle */
+  .container button::before {
+    content: '🔄';
+    margin-right: 6px;
+    font-size: 0.9em;
+  }
+  
+  /* Version mobile */
+  @media (max-width: 768px) {
+    .container button {
+      padding: 6px 12px;
+      min-width: 80px;
+      font-size: 0.8rem;
+    }
+    
+    .container td:last-child {
+      padding: 8px 12px;
+    }
+  }
+
+
+  /* Messages d'alerte */
+.alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  
+  .error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-left: 4px solid #dc2626;
+  }
+  
+  .success {
+    background-color: #dcfce7;
+    color: #166534;
+    border-left: 4px solid #22c55e;
+  }
+  
+  .loading-indicator {
+    padding: 12px 16px;
+    color: #3b82f6;
+    font-weight: 500;
+  }
+  
+  /* Style du bouton amélioré */
+  button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    min-width: 100px;
+  }
+  
+  button:hover:not(:disabled) {
+    background: #2563eb;
+  }
+  
+  button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+  }
+  
+  /* Style de la colonne confiance */
+  td:nth-child(4) {
+    font-weight: 500;
+    color: #1d4ed8;
+  }

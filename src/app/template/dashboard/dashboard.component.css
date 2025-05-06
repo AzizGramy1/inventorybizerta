@@ -1,0 +1,22 @@
+/* Contenu principal */
+.main-content {
+    flex: 1;
+    margin-left: 260px; /* Réduire la marge pour rapprocher du sidebar */
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: flex-start; /* Aligner à gauche */
+    align-items: flex-start; /* Aligner en haut */
+}
+
+/* Tableau de bord */
+.dashboard-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 95%; /* Augmenter la largeur */
+    max-width: 1200px; /* Largeur maximale */
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}

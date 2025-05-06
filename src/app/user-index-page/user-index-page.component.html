@@ -1,0 +1,38 @@
+<div class="container">
+
+
+    <nav class="navbar">
+        <div class="navbar-brand">User Manager</div>
+        <div class="navbar-links">
+          <a href="http://localhost:4200/userMenuPage<" class="nav-link active">Home</a>
+          
+        </div>
+        <div class="navbar-actions">
+          <button class="btn-notification">
+            <i class="bell-icon">🔔</i>
+          </button>
+          <div class="user-avatar">👤</div>
+        </div>
+      </nav>
+
+    <h2>List of all the users</h2>
+    <button class="add-user-btn" >
+        <span class="plus-icon">+</span> Add User
+    </button>
+  
+    <div class="user-grid" >
+      <div class="user-card" *ngFor="let user of users">
+        <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Number:</strong> {{ user.phone }}</p>
+        <p><strong>User Name:</strong> {{ user.username }}</p>
+        <div class="user-card-actions">
+            <button class="btn-edit"></button>
+            <button class="btn-delete"></button>
+          </div>   
+
+      </div>
+    </div>
+
+  </div>
+  

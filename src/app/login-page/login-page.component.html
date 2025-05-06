@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Pont de Bizerte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #000;
+            background-image: url('https://images.unsplash.com/photo-1631023052391-8a5b0a8b8b0f'); /* Remplacez par l'URL de votre image */
+            background-size: cover; /* Couvre tout l'espace disponible */
+            background-position: center; /* Centre l'image */
+            background-repeat: no-repeat; /* Empêche la répétition de l'image */
+            background-attachment: fixed; /* Fixe l'image lors du défilement */
+        }
+
+        /* Navbar */
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #navbar .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        #navbar .logo a span {
+            color: #ff6f61;
+        }
+
+        #navbar ul.links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul.links li {
+            margin: 0 15px;
+        }
+
+        #navbar ul.links li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: color 0.3s ease, background 0.3s ease;
+        }
+
+        #navbar ul.links li a:hover {
+            color: #ff6f61;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        #navbar ul.links li a.active {
+            color: #ff6f61;
+        }
+
+        #navbar .menu-toggle {
+            display: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            #navbar ul.links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            #navbar ul.links.active {
+                display: flex;
+            }
+
+            #navbar ul.links li {
+                margin: 10px 0;
+            }
+
+            #navbar .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Section de connexion avec image */
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px;
+            gap: 40px; /* Espace entre l'image et le formulaire */
+        }
+
+        .login-image {
+            flex: 1; /* Prend 50% de l'espace */
+            max-width: 53%; /* Limite la largeur de l'image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px; /* Coins arrondis */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Ombre portée */
+        }
+
+        .login-container {
+            flex: 1; /* Prend 50% de l'espace */
+            background: rgba(255, 255, 255, 0.9); /* Fond semi-transparent pour la lisibilité */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container h1 {
+            font-size: 32px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0b0b0b, #0e0e0e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .login-container h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .login-container .input-group {
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .login-container .input-group input {
+            width: 100%;
+            padding: 12px 40px 12px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-container .input-group input:focus {
+            border-color: #cb7111;
+            box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+            outline: none;
+        }
+
+        .login-container .input-group i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #cb8a11;
+            font-size: 18px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #cb5811, #6a11cb);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background: linear-gradient(135deg, hsl(28, 85%, 49%), #6a11cb);
+            transform: translateY(-2px);
+        }
+
+        .login-container button:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            color: #ff4757;
+            margin-top: 10px;
+            font-size: 14px;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .login-container p {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .login-container a {
+            color: #6a11cb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .login-container a:hover {
+            color: #2575fc;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .login-section {
+                flex-direction: column; /* Empile l'image et le formulaire */
+                gap: 20px;
+            }
+
+            .login-image, .login-container {
+                max-width: 100%; /* Prend toute la largeur sur les petits écrans */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">
+            <a href="index.html">Welcome <span>To Bizert Bridge</span></a>
+        </div>
+        <ul class="links">
+            <li><a [routerLink]="['/welcome']" class="active">Home</a></li> <!-- Utilisation de routerLink -->
+            
+            <li><a [routerLink]="['/signUp']" class="active">Sign Up</a></li> <!-- Utilisation de routerLink -->
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span>☰</span>
+        </div>
+    </nav>
+
+    <!-- Section de connexion avec image -->
+    <section class="login-section">
+        <!-- Image à côté du formulaire -->
+        <div class="login-image">
+            <img src="https://pbs.twimg.com/media/FA9jjXeVQAkPiTg.jpg:large" alt="Pont de Bizerte">
+        </div>
+
+        <!-- Formulaire de connexion -->
+        <div class="login-container">
+            <h1>Welcome </h1>
+            <h2>Log In </h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Nom d'utilisateur" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Mot de passe" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <button [routerLink]="['/menuAdmin']" class="btn" >Log In</button>
+            </form>
+            <p class="error-message" id="errorMessage"></p>
+            <p>No account ? <a [routerLink]="['/singUp']" class="btn">Sign Up</a></p>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // Gestion du formulaire de connexion
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Exemple de validation simple
+            if (username === "admin" && password === "password") {
+                alert('Connexion réussie !');
+                window.location.href = 'index.html'; // Redirection vers la page d'accueil
+            } else {
+                document.getElementById('errorMessage').textContent = 'Nom d\'utilisateur ou mot de passe incorrect.';
+            }
+        });
+
+        // Gestion du menu mobile
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const links = document.querySelector('ul.links');
+            links.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

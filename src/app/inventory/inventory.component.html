@@ -1,0 +1,48 @@
+    
+    
+    
+    <div class="container">
+        <h2>Real-time inventory</h2>
+
+
+
+         <!-- Messages d'état -->
+  <div *ngIf="errorMessage" class="alert error">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="successMessage" class="alert success">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="isLoading" class="loading-indicator">
+    Loading...
+  </div>
+  
+        <table>
+        <thead>
+            <tr>
+            <th>Produit</th>
+            <th>Catégorie</th>
+            <th>Quantité</th>
+            <th>Confiance</th>
+            <th>Emplacement</th>
+            <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of inventoryList">
+            <td>{{ item.productName }}</td>
+            <td>{{ item.productCategory }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.confidence }}</td>
+            <td>{{ item.location }}</td>
+            <td>{{ item.detectionDate | date:'short' }}</td>
+            <td>
+                <button (click)="updateInventory(item)" [disabled]="isLoading">
+                    {{ isLoading ? 'Updating...' : 'Update' }}
+                  </button><!-- Bouton pour mettre à jour -->
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    

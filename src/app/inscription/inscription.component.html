@@ -1,0 +1,43 @@
+<div class="registration-container">
+    <h1>Registration</h1>
+    <h2>Join Our Team</h2>
+    <form >
+      <!-- Full Name -->
+      <div class="input-group">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <i class="fas fa-user"></i>
+      </div>
+  
+      <!-- Email -->
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Email Address" required>
+        <i class="fas fa-envelope"></i>
+      </div>
+  
+      <!-- Password -->
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Password" required>
+        <i class="fas fa-lock"></i>
+      </div>
+  
+      <!-- Role Selection -->
+      <div class="input-group">
+        <select id="role" required>
+          <option value="" disabled selected>Select a Role</option>
+          <option value="staff">Bridge Staff</option>
+          <option value="worker">Worker</option>
+          <option value="shop-vendor">Shop Vendor</option>
+        </select>
+        <i class="fas fa-briefcase"></i>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit">Register</button>
+    </form>
+  
+    <!-- Error Message -->
+    <p class="error-message" id="errorMessage"></p>
+  
+    <!-- Login Link -->
+    <p>Already registered? <a routerLink="/">Log In</a></p>
+  </div>

@@ -1,0 +1,464 @@
+/* Styles généraux */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  h2 {
+    color: #262626;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+  }
+  
+  h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  
+  /* Grille des utilisateurs */
+  .user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 10px;
+  }
+  
+  /* Carte utilisateur */
+  .user-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #efefef;
+    position: relative;
+  }
+  
+  .user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .user-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  }
+  
+  .user-card h3 {
+    color: #262626;
+    font-size: 20px;
+    margin: 20px 15px 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+  }
+  
+  .user-card p {
+    color: #555;
+    font-size: 14px;
+    margin: 8px 15px;
+    line-height: 1.5;
+  }
+  
+  .user-card p strong {
+    color: #262626;
+    font-weight: 600;
+  }
+  
+  /* Effet au survol */
+  .user-card:hover h3 {
+    color: #dc2743;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .user-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .user-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  /* Ajoutez ceci à votre CSS existant */
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.add-user-btn {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+}
+
+.add-user-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+}
+
+.add-user-btn:active {
+    transform: translateY(0);
+}
+
+.plus-icon {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.add-user-btn:hover .plus-icon {
+    transform: rotate(90deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .header-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .add-user-btn {
+        padding: 8px 16px;
+    }
+}
+
+
+/* ===== Global Styles ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    color: #262626;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* ===== Navbar ===== */
+  .navbar {
+    background: white;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar-brand {
+    font-size: 22px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-link {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #dc2743;
+  }
+  
+  .nav-link.active {
+    color: #262626;
+    font-weight: 600;
+  }
+  
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .btn-notification {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #262626;
+    transition: transform 0.3s;
+  }
+  
+  .btn-notification:hover {
+    transform: scale(1.1);
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+  }
+  
+  /* ===== Main Content ===== */
+  .container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  h2 {
+    color: #262626;
+    font-size: 28px;
+    margin: 0;
+    position: relative;
+  }
+  
+  h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    margin-top: 10px;
+    border-radius: 2px;
+  }
+  
+  /* ===== Add User Button ===== */
+  .add-user-btn {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+  }
+  
+  .add-user-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+  }
+  
+  .plus-icon {
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  .add-user-btn:hover .plus-icon {
+    transform: rotate(90deg);
+  }
+  
+  /* ===== User Grid ===== */
+  .user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 10px;
+  }
+  
+  .user-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #efefef;
+    position: relative;
+  }
+  
+  .user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .user-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  }
+  
+  .user-card h3 {
+    color: #262626;
+    font-size: 20px;
+    margin: 20px 15px 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+  }
+  
+  .user-card p {
+    color: #555;
+    font-size: 14px;
+    margin: 8px 15px;
+    line-height: 1.5;
+  }
+  
+  .user-card p strong {
+    color: #262626;
+    font-weight: 600;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .user-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+  
+    .navbar-links {
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .header-section {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px;
+    }
+  
+    .navbar-links {
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .add-user-btn {
+      padding: 8px 16px;
+    }
+  }
+
+ /* ===== User Card Buttons ===== */
+.user-card-actions {
+    display: flex;
+    gap: 10px;
+    margin: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #efefef;
+  }
+  
+  .btn-edit, .btn-delete {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .btn-edit {
+    background-color: #f8f9fa;
+    color: #0095f6;
+    border: 1px solid #dbdbdb;
+  }
+  
+  .btn-edit:hover {
+    background-color: #e6f4ff;
+    border-color: #0095f6;
+    transform: translateY(-2px);
+  }
+  
+  .btn-delete {
+    background-color: #f8f9fa;
+    color: #ed4956;
+    border: 1px solid #dbdbdb;
+  }
+  
+  .btn-delete:hover {
+    background-color: #ffebee;
+    border-color: #ed4956;
+    transform: translateY(-2px);
+  }
+  
+  /* Icons */
+  .btn-edit::before {
+    content: '✏️';
+  }
+  
+  .btn-delete::before {
+    content: '🗑️';
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .btn-edit, .btn-delete {
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+  }

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bizerte Bridge - Tunisia</title>
+    <style>
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Navbar moderne */
+        .navbar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6a11cb;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            color: #2575fc;
+            transform: scale(1.1);
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .navbar .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #6a11cb;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-links li a:hover {
+            color: #6a11cb;
+        }
+
+        .navbar .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        /* Contenu principal */
+        .main-content {
+            margin-top: 80px; /* Pour éviter que la navbar ne chevauche le contenu */
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            font-weight: bold;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight {
+            color: #6a11cb;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            transform: translateY(-2px);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+    </style>
+    <!-- Lien vers Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar moderne -->
+    <nav class="navbar">
+        <a href="#" class="logo">Bizerte Bridge</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <h1>The Bizerte Bridge</h1>
+        <h2>An Architectural Gem in Tunisia</h2>
+        <p>
+            The <span class="highlight">Bizerte Bridge</span>, located in the city of Bizerte in northern Tunisia,
+            is an iconic symbol of modern engineering. This bridge connects the two banks of the Bizerte Canal,
+            facilitating trade and tourism between different regions.
+        </p>
+        <p>
+            Built with high-quality materials and designed to withstand extreme weather conditions,
+            the bridge is a perfect example of technological innovation. It also offers a breathtaking view of
+            the Mediterranean Sea, attracting visitors from around the world.
+        </p>
+
+        <!-- Galerie d'images -->
+        <div class="image-gallery">
+            <img src="https://via.placeholder.com/300x200" alt="Bizerte Bridge - Day View">
+            <img src="https://via.placeholder.com/300x200" alt="Bizerte Bridge - Night View">
+            <img src="https://via.placeholder.com/300x200" alt="Bizerte Bridge - Aerial View">
+        </div>
+
+        <h2>Why Visit the Bizerte Bridge?</h2>
+        <p>
+            The Bizerte Bridge is much more than just infrastructure. It is a place rich in history and culture,
+            where you can admire stunning landscapes and discover Tunisia's architectural heritage.
+        </p>
+
+        <!-- Bouton d'action -->
+        <a href="#" class="cta-button">Discover More</a>
+    </div>
+
+    <script>
+        // Animation pour le bouton CTA
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Thank you for your interest!');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+/* Import des polices et icônes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.instagram-theme {
+  font-family: 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.header h2 {
+  color: #262626;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.header h2 i {
+  margin-right: 10px;
+  color: #e1306c;
+}
+
+.search-bar {
+  position: relative;
+  width: 250px;
+}
+
+.search-bar i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8e8e8e;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 10px 8px 35px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+/* Carte d'ajout */
+.add-voucher-card {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.add-voucher-card h3 {
+  color: #262626;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.add-voucher-card h3 i {
+  margin-right: 8px;
+  color: #e1306c;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8e8e8e;
+}
+
+.form-group input, 
+.form-group select {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-group select {
+  appearance: none;
+  background-color: white;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.post-button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.post-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.post-button i {
+  margin-right: 8px;
+}
+
+/* Grille de vouchers */
+.voucher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.voucher-card {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.voucher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #efefef;
+}
+
+.voucher-code {
+  font-weight: 500;
+  color: #262626;
+  font-size: 16px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.announce {
+  color: #262626;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.dates {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  color: #8e8e8e;
+  font-size: 13px;
+}
+
+.date-item i {
+  margin-right: 5px;
+}
+
+.card-actions {
+  display: flex;
+  padding: 10px 15px;
+  border-top: 1px solid #efefef;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #8e8e8e;
+  transition: color 0.3s;
+}
+
+.like-btn {
+  margin-right: 10px;
+}
+
+.like-btn:hover {
+  color: #ed4956;
+}
+
+.delete-btn:hover {
+  color: #ed4956;
+}
+
+/* Couleurs selon le statut */
+.ACTIVE {
+  border-top: 4px solid #4CAF50;
+}
+
+.ACTIVE .status-badge {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.INACTIVE {
+  border-top: 4px solid #607D8B;
+}
+
+.INACTIVE .status-badge {
+  background-color: #eceff1;
+  color: #455a64;
+}
+
+.EXPIRED {
+  border-top: 4px solid #F44336;
+}
+
+.EXPIRED .status-badge {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.USED {
+  border-top: 4px solid #2196F3;
+}
+
+.USED .status-badge {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+
+.voucher-details-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    padding: 20px;
+    margin-top: 30px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .close-detail-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
